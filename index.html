@@ -1,206 +1,80 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>For My Best Behena</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --neon-color: #ff85a1;
-            --accent-color: #a78bfa;
-        }
-        
-        * { box-sizing: border-box; }
-        
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background: #000;
-            background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
-                              url('https://images.unsplash.com/photo-1594911776595-309a061803b3?q=80&w=1974');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* --- Bubbles Layer --- */
-        #bubble-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 5;
-        }
-
-        .bubble {
-            position: absolute;
-            bottom: -150px;
-            background: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            animation: rise infinite linear;
-        }
-
-        @keyframes rise {
-            0% { transform: translateY(0) scale(1); opacity: 0; }
-            10% { opacity: 0.8; }
-            90% { opacity: 0.8; }
-            100% { transform: translateY(-120vh) scale(1.3); opacity: 0; }
-        }
-
-        /* --- Main Box --- */
-        .container {
-            position: relative;
-            z-index: 20;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 30px 20px;
-            border-radius: 20px;
-            text-align: center;
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
-        }
-
-        h2 { color: var(--neon-color); text-shadow: 0 0 10px rgba(255,133,161,0.5); font-size: 1.3rem; margin-bottom: 15px; }
-        
-        .feeling-box {
-            background: rgba(0, 0, 0, 0.65);
-            padding: 18px;
-            border-radius: 12px;
-            margin: 20px 0;
-            border-left: 4px solid var(--neon-color);
-            text-align: left;
-            font-size: 0.95rem;
-            line-height: 1.7;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        input {
-            width: 100%;
-            padding: 14px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            color: white;
-            text-align: center;
-            outline: none;
-            margin-bottom: 20px;
-            font-size: 1rem;
-        }
-
-        button {
-            width: 100%;
-            padding: 14px;
-            border-radius: 50px;
-            border: none;
-            background: linear-gradient(45deg, var(--neon-color), var(--accent-color));
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(167, 139, 250, 0.4);
-            font-size: 1rem;
-            transition: 0.3s;
-        }
-        button:active { transform: scale(0.98); }
-
-        .hidden { display: none; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry Behena 💔</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        color: #333;
+    }
+    .card {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        max-width: 400px;
+        animation: fadeIn 2s ease;
+    }
+    h1 {
+        color: #ff4d6d;
+    }
+    p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    .heart {
+        font-size: 40px;
+        animation: beat 1s infinite;
+    }
+    @keyframes beat {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
 </head>
 <body>
 
-<div id="bubble-container"></div>
+<div class="card">
+    <div class="heart">💔</div>
+    <h1>Sorry BEHENA</h1>
+    <p>
+        BEHENA please ree maaf karde 😔<br><br>
 
-<div class="container" id="box">
-    <h2 id="q-text">Loading...</h2>
-    <div id="input-area">
-        <input type="text" id="ans-input" placeholder="Jawab yahan likho..." autocomplete="off">
-    </div>
-    <div id="msg-display" class="hidden feeling-box"></div>
-    <button onclick="checkAnswer()" id="main-btn">Unlock 🔓</button>
+        Woh galti karke chala gaya lekin bhugatna mujhe hi pad raha hai…<br><br>
+
+        Maine saga-paraya kabhi beech mein nahi laya, aur tune uss din mujhe woh bhi bol diya…<br><br>
+
+        Mujhe pata hai tuze bohot jyada hurt hua hai… lekin meri kya galti…<br>
+        Bura mujhe bhi bohot laga…<br><br>
+
+        Mai tuze khona nahi chahta hu re… please maaf karde 🙏<br><br>
+
+        Maine tuze bohot jyada dil se BEHEN mana hai ❤️<br><br>
+
+        Maine tuze apne family ka hissa hi mana hai ree…<br>
+        Please aisa mat kar 😔<br><br>
+
+        Terese baat karte karte rona aa jata hai mujhe jab tu udaas rehti hai… 😢<br><br>
+
+        Tu naraz hai aur mujhe baat karne ka mann karta hai toh rona aa jata hai… 😢<br><br>
+
+        Love you BEHENA… please maaf karde 🙏
+    </p>
 </div>
 
-<script>
-    // Create Bubbles
-    const bContainer = document.getElementById('bubble-container');
-    function createBubble() {
-        const bubble = document.createElement('div');
-        bubble.className = 'bubble';
-        const size = Math.random() * 45 + 15 + 'px';
-        bubble.style.width = size;
-        bubble.style.height = size;
-        bubble.style.left = Math.random() * 100 + 'vw';
-        bubble.style.animationDuration = Math.random() * 5 + 4 + 's';
-        bContainer.appendChild(bubble);
-        setTimeout(() => { bubble.remove(); }, 9000);
-    }
-    setInterval(createBubble, 400);
-
-    const steps = [
-        { q: "Mai kis game se mila था?", a: "freefire", msg: "Kaisi hai? Hope bohot aachi hogi. Tuze pata tu jab mili thina tab laga nhi tha ki tu sachme itne time Tak sath rahegi. Thank U for being there!" },
-        { q: "Mai tuze konse month mai mila था?", a: "november", msg: "Tuze pata hai mai bolta huna mujhe game se utna farak nhi padta, kyuki game se teri jaisi behen mil gyi aur kya chahiye. Thank U yrr Bhai banane ke liye!" },
-        { q: "Mai tuze kis naam se bulata hu?", a: "piddi", msg: "Thank U for everything, for making me happy, for being my Comfort place. Tu bohot jyada aachi hai BEHENA. Mai na tuze khona nhi chahta hu sachme." },
-        { q: "Mai tuze konse date pe mila था?", a: "23", msg: "Mujhe pata hai maine kabhi na kabhi tuze hurt kiya hoga, teri expectation ko toda hoga. Bss tu muze bolti nhi. Uske liye dil se sorry. Maaf kar dena please." }
-    ];
-
-    let currentStep = 0;
-
-    function checkAnswer() {
-        const inputField = document.getElementById('ans-input');
-        const input = inputField.value.toLowerCase().trim();
-        const msgDisplay = document.getElementById('msg-display');
-        const inputArea = document.getElementById('input-area');
-
-        if (input === steps[currentStep].a) {
-            document.getElementById('q-text').innerText = "Memory Unlocked ✨";
-            inputArea.classList.add('hidden');
-            msgDisplay.classList.remove('hidden');
-            msgDisplay.innerHTML = `<p>${steps[currentStep].msg}</p>`;
-            document.getElementById('main-btn').innerText = "Next Challenge ➡️";
-            document.getElementById('main-btn').onclick = nextLevel;
-        } else {
-            alert("Galat jawab! Yaad karo...");
-            inputField.value = "";
-        }
-    }
-
-    function nextLevel() {
-        currentStep++;
-        if (currentStep < steps.length) {
-            document.getElementById('q-text').innerText = steps[currentStep].q;
-            document.getElementById('input-area').classList.remove('hidden');
-            document.getElementById('ans-input').value = "";
-            document.getElementById('msg-display').classList.add('hidden');
-            document.getElementById('main-btn').innerText = "Unlock 🔓";
-            document.getElementById('main-btn').onclick = checkAnswer;
-        } else {
-            document.getElementById('box').innerHTML = `
-                <h2 style="color:var(--neon-color)">Dil Se Tere Liye ❤️</h2>
-                <div class="feeling-box">
-                    Dekh koi tuze kuch bhi bole dhyan mtt diya kar meri baat Mann tu bohot bohot bohot aachi hai BEHENA. Terese kuch bhi kehenekeliye abhi sochna nhi padta mujhe Jo Mann mai aaya boldeta hu shayad kabhi tuze bura laga hoga maaf kar dena please.<br><br>
-                    Jabhi Terese baat karta hu yaa game khelta huna na bohot aacha lagta hai. Kaash tu meri sagi behen hoti, baat karne ke liye tarasna nhi padta.<br><br>
-                    Hamesha Khush reh ree 🙌 Muskurati reh 🙌<br><br>
-                    Aur shabd hi nhi hai aab merepass bolne ke liye, jab overthinking karta hu tab bohot kuch rehta hai but aab dekh ....... Tere muh pe yeh sab bolne ki himat nhi haina isliye yeh website banayi. 👉👈 Solly!
-                </div>
-                <div style="font-size: 35px; margin-top: 10px;">🌟🦋✨</div>
-            `;
-        }
-    }
-    window.onload = () => { document.getElementById('q-text').innerText = steps[0].q; }
-</script>
 </body>
 </html>
