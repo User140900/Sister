@@ -3,78 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sorry Behena 💔</title>
+<title>Secret Page 💗</title>
+
 <style>
     body {
         margin: 0;
-        padding: 0;
-        font-family: 'Segoe UI', sans-serif;
-        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ffc0cb, #ff99cc);
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
-        text-align: center;
-        color: #333;
     }
-    .card {
+
+    .box {
         background: white;
         padding: 30px;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        max-width: 400px;
-        animation: fadeIn 2s ease;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
     }
-    h1 {
-        color: #ff4d6d;
+
+    input {
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        width: 200px;
+        margin-bottom: 10px;
     }
-    p {
-        font-size: 16px;
-        line-height: 1.6;
+
+    button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        background: #ff4da6;
+        color: white;
+        cursor: pointer;
     }
-    .heart {
-        font-size: 40px;
-        animation: beat 1s infinite;
+
+    button:hover {
+        background: #ff1a8c;
     }
-    @keyframes beat {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.2); }
+
+    #error {
+        color: red;
+        margin-top: 10px;
     }
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
+
+    #content {
+        display: none;
+        text-align: center;
+        color: white;
     }
 </style>
+
 </head>
+
 <body>
 
-<div class="card">
-    <div class="heart">💔</div>
-    <h1>Sorry BEHENA</h1>
-    <p>
-        BEHENA please ree maaf karde 😔<br><br>
-
-        Woh galti karke chala gaya lekin bhugatna mujhe hi pad raha hai…<br><br>
-
-        Maine saga-paraya kabhi beech mein nahi laya, aur tune uss din mujhe woh bhi bol diya…<br><br>
-
-        Mujhe pata hai tuze bohot jyada hurt hua hai… lekin meri kya galti…<br>
-        Bura mujhe bhi bohot laga…<br><br>
-
-        Mai tuze khona nahi chahta hu re… please maaf karde 🙏<br><br>
-
-        Maine tuze bohot jyada dil se BEHEN mana hai ❤️<br><br>
-
-        Maine tuze apne family ka hissa hi mana hai ree…<br>
-        Please aisa mat kar 😔<br><br>
-
-        Terese baat karte karte rona aa jata hai mujhe jab tu udaas rehti hai… 😢<br><br>
-
-        Tu naraz hai aur mujhe baat karne ka mann karta hai toh rona aa jata hai… 😢<br><br>
-
-        Love you BEHENA… please maaf karde 🙏
-    </p>
+<div class="box" id="loginBox">
+    <h2>Enter Password 🔒</h2>
+    <input type="password" id="password" placeholder="Enter password">
+    <br>
+    <button onclick="checkPassword()">Unlock</button>
+    <div id="error"></div>
 </div>
+
+<div id="content">
+    <h1>Sorry BEHENA Terese Jhooth bola 😔</h1>
+    <p>Mujhe na kal Tere sath game khelte hue bilkul aacha nhi laga, uss group Mai ShivuX karke banda tha tuze didi karke bula rha tha mujhe itna gussa aaraha tha kya batau kyuki mujhe lagta tu sirf meri Behen hai, tuze bohot Dilse BEHENmanta hu kya karu, mai tuze kuch bol bhi nhi sakta kya karu teri bhi apni choice kise kya banana hai karke, aur woh RudraTheOG uske sath DD dekha bura bilkul nhi laga lekin bura iss baat ka laga ki mujhe bss bataya bhi nhi, shayad mai jarurat se jyada hakk jata tha hu, mujhe Bohot jyada bura laga lekin baat woh nhi hai tu kisi buri sangat mai na pade,kisiko baaton Mai na aaye wahi fikar hai kyuki sab aache nhi hote, fikar hai aur kuch nhi 
+<br>
+Isliye maine faisla kiya hai ki Tere sath game khelna kaam kardunga kyuki jab jab tuze dekhunga unke sath bura lagega Rona aayega isliye, shayad mai galat hu kisi baaton Mai isliye khudko limit mai rkhna chahtahu, Itna bura laga hai ki tuze bata bhi nhi pa rha hu 
+<br>
+Aab isse jealousy bol ya kuch bhi bol mujhe bhi pata, ek Bhai chahta hai ki uski BEHEN sirf uski reh lekin shayad mai galat hu 
+<br>
+Website update bhi khudko tasali dene ke liye ki , yeh soch kar ki tu kabhi open karegi sab padhegi aur mera mann halka hojayega ki tuze pata hai karke ... 
+koi na Love You BEHENA 💗 
+</p>
+</div>
+
+<script>
+function checkPassword() {
+    let pass = document.getElementById("password").value;
+    let error = document.getElementById("error");
+
+    if(pass === "ladli007") {
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    } else {
+        error.innerText = "❌ Wrong Password!";
+        
+        // Vibration (mobile support)
+        if (navigator.vibrate) {
+            navigator.vibrate([200, 100, 200]);
+        }
+    }
+}
+</script>
 
 </body>
 </html>
